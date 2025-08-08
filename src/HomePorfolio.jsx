@@ -6,9 +6,6 @@ import githubImg from "./assets/github-imagen.png";
 import profilePhoto from "./assets/profilePhoto.png";
 import "./styles.css";
 
-// TODO -- Opcion de colocarlo en blanco o en negro
-// TODO -- JEST (Ver video de Udemy)
-// TODO -- Agregar que se FIGMA
 
 const HomePorfolio = () => {
   const [emailCopied, setEmailCopied] = useState(false);
