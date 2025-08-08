@@ -1,17 +1,28 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
+import Experience from "./components/Experience/Experience";
+import Habilities from "./components/Habilities/Habilities";
 import linkedinImg from "./assets/linkedin.png";
 import githubImg from "./assets/github-imagen.png";
 import profilePhoto from "./assets/profilePhoto.png";
 import "./styles.css";
 
 // TODO -- Opcion de colocarlo en blanco o en negro
+// TODO -- JEST (Ver video de Udemy)
+// TODO -- Agregar que se FIGMA
 
 const HomePorfolio = () => {
-  //   const [emailCopied, setEmailCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   const nameDev = "Paula Rodriguez";
   const areaWork = "Frontend Developer";
-  //   const email = "paularodriguez93.pr@gmail.com";
+  const email = "paularodriguez93.pr@gmail.com";
+
+  const handleEmailCopy = () => {
+    console.log("mail copiado", emailCopied);
+
+    return setEmailCopied(!emailCopied);
+  };
+
   return (
     <div>
       <div className="containerPorfolio">
@@ -33,13 +44,12 @@ const HomePorfolio = () => {
 
       <div>
         <label>Email</label>
-        <input
-          name="email"
-          type="email"
-          placeholder="paularodriguez93.pr@gmail.com"
-        ></input>
+        <input name="email" type="email" placeholder={email}></input>
         <button>Enviar</button>
-        <button>Copiar email</button>
+        <button onClick={handleEmailCopy}>Copiar email</button>
+      </div>
+      <div>
+        <button>Dowload CV</button>
       </div>
       <div className="container-social-links">
         <a href="https://github.com/pollie93?tab=repositories">
@@ -52,6 +62,19 @@ const HomePorfolio = () => {
             alt="Linkedn image"
           />
         </a>
+      </div>
+
+      {/* Tecnologías */}
+      <div>
+        <h2>Tecnologias</h2>
+        <Habilities />
+      </div>
+
+      {/* Experiencia */}
+      <div></div>
+      {/* Proyectos */}
+      <div>
+        <h2>Proyectos</h2>
       </div>
     </div>
   );
