@@ -1,56 +1,49 @@
-import "./styles.css";
+import CardTechnology from '../CardTechnology/CardTechnology';
+import * as techImgs from '../../assets/technologyImg/index';
+import './styles.css';
+
 const Habilities = () => {
+  const technlogyArrs = [
+    {
+      img: techImgs.reactImg,
+      text: 'React',
+    },
+    {
+      img: techImgs.javascriptImg,
+      text: 'Javascript',
+    },
+    {
+      img: techImgs.typescriptImg,
+      text: 'TypeScript',
+    },
+    {
+      img: techImgs.sassImg,
+      text: 'Sass',
+    },
+    {
+      img: techImgs.styledcomponentsImg,
+      text: 'Styled components',
+    },
+    {
+      img: techImgs.graphqlImg,
+      text: 'GraphQL',
+    },
+    {
+      img: techImgs.vtexImg,
+      text: 'Vtex io',
+    },
+  ];
   return (
     <div className="container-technology">
-      <div className="card-technology">
-        <img
-          className="technology-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-        />
-        <p className="description-technology">React</p>
-      </div>
-      <div className="card-technology">
-        <img
-          className="technology-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-        />
-        <p className="description-technology">Javascript</p>
-      </div>
-      <div className="card-technology">
-        <img
-          className="technology-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-        />
-        <p className="description-technology">TypeScript</p>
-      </div>
-      <div className="card-technology">
-        <img
-          className="technology-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
-        />
-        <p className="description-technology">SASS</p>
-      </div>
-      <div className="card-technology">
-        <img
-          className="technology-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/styledcomponents/styledcomponents-original.svg"
-        />
-        <p className="description-technology">Styled components</p>
-      </div>
-      <div className="card-technology">
-        <img
-          className="technology-img"
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg"
-        />
-        <p className="description-technology">GraphQL</p>
-      </div>
-      <div className="card-technology">
-        <img
-          className="technology-img"
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a9/VTEX_Logo.svg"
-        />
-        <p className="description-technology">Vtex io</p>
-      </div>
+      {technlogyArrs.map((techInfo, idx) => {
+        return (
+          <CardTechnology
+            key={idx}
+            imgTechnology={techInfo.img}
+            textTechnology={techInfo.text}
+          />
+        );
+      })}
     </div>
   );
 };

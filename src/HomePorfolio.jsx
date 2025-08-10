@@ -68,7 +68,7 @@ const HomePorfolio = () => {
       </div>
 
       {/* Experiencia */}
-      <div></div>
+      <div><Experience/></div>
       {/* Proyectos */}
       <div>
         <h2>Proyectos</h2>
